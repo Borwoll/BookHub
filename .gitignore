@@ -1,0 +1,95 @@
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Yii2
+/runtime/*
+!/runtime/.gitignore
+/runtime/.gitkeep
+
+# Web assets
+/web/assets/*
+!/web/assets/.gitignore
+
+# Tests
+tests/_output/*
+tests/_support/_generated
+/tests/_output/*
+!/tests/_output/.gitignore
+phpunit.phar
+/phpunit.xml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE - PhpStorm
+.idea/
+*.iml
+*.iws
+
+# IDE - VSCode
+.vscode/
+
+# IDE - NetBeans
+nbproject/
+
+# IDE - Eclipse
+.buildpath
+.project
+.settings/
+*.launch
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Docker
+.docker-composer/
+
+# Vagrant
+/.vagrant/
+/vagrant/.vagrant/
+
+# OS - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# OS - Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# OS - Linux
+*~
+.directory
+.Trash-*
+
+# Logs
+*.log
+logs/
+
+# Cache
+*.cache
+*.tmp
+*.temp
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+*.bak
+*.backup
+*~
