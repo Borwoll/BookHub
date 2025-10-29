@@ -1,16 +1,12 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "https://www.yiiframework.com/",
+    "name": "bookhub/bookhub",
+    "description": "BookHub - Book Management System",
+    "keywords": ["yii2", "framework", "bookhub", "books", "library"],
+    "homepage": "https://github.com/Borwoll/BookHub",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "https://www.yiiframework.com/forum/",
-        "wiki": "https://www.yiiframework.com/wiki/",
-        "irc": "ircs://irc.libera.chat:6697/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "source": "https://github.com/Borwoll/BookHub"
     },
     "minimum-stability": "stable",
     "require": {
@@ -28,7 +24,8 @@
         "codeception/module-asserts": "^3.0 || ^1.1",
         "codeception/module-yii2": "^1.1",
         "codeception/module-filesystem": "^3.0 || ^2.0 || ^1.1",
-        "codeception/verify": "^3.0 || ^2.2"
+        "codeception/verify": "^3.0 || ^2.2",
+        "friendsofphp/php-cs-fixer": "3.50"
     },
     "config": {
         "allow-plugins": {
