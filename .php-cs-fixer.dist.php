@@ -1,14 +1,20 @@
 <?php
+
 $finder = PhpCsFixer\Finder::create()
     ->exclude([
         'Submodules',
     ])
-    ->in(__DIR__.'/app')
-    ->in(__DIR__.'/database')
-    ->in(__DIR__.'/routes')
-    ->in(__DIR__.'/tests');
+    ->in(__DIR__ . '/assets')
+    ->in(__DIR__ . '/commands')
+    ->in(__DIR__ . '/config')
+    ->in(__DIR__ . '/controllers')
+    ->in(__DIR__ . '/models')
+    ->in(__DIR__ . '/tests')
+    ->in(__DIR__ . '/views')
+    ->in(__DIR__ . '/web')
+    ->in(__DIR__ . '/widgets');
 
-$config = new PhpCsFixer\Config;
+$config = new PhpCsFixer\Config();
 
 return $config
     ->setFinder($finder)
@@ -436,7 +442,7 @@ return $config
         'phpdoc_var_without_name' => true,
         'pow_to_exponentiation' => true,
         'protected_to_private' => false,
-        'psr_autoloading' => ['dir' => __DIR__.'/app'],
+        'psr_autoloading' => ['dir' => __DIR__],
         'random_api_migration' => [
             'replacements' => ['getrandmax' => 'mt_getrandmax', 'rand' => 'mt_rand', 'srand' => 'mt_srand'],
         ],

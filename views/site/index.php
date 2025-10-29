@@ -1,6 +1,6 @@
 <?php
 
-/** @var yii\web\View $this */
+declare(strict_types=1);
 
 $this->title = 'My Yii Application';
 ?>

@@ -1,9 +1,6 @@
 <?php
 
-/** @var yii\web\View $this */
-/** @var yii\bootstrap5\ActiveForm $form */
-
-/** @var app\models\LoginForm $model */
+declare(strict_types=1);
 
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
@@ -12,7 +9,7 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?php echo Html::encode($this->title); ?></h1>
 
     <p>Please fill out the following fields to login:</p>
 
@@ -29,17 +26,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ]); ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <?php echo $form->field($model, 'username')->textInput(['autofocus' => true]); ?>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+            <?php echo $form->field($model, 'password')->passwordInput(); ?>
 
-            <?= $form->field($model, 'rememberMe')->checkbox([
+            <?php echo $form->field($model, 'rememberMe')->checkbox([
                 'template' => "<div class=\"custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            ]) ?>
+            ]); ?>
 
             <div class="form-group">
                 <div>
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?php echo Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']); ?>
                 </div>
             </div>
 
