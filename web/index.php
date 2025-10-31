@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-// comment out the following two lines when deployed to production
 defined('YII_DEBUG') || define('YII_DEBUG', true);
 defined('YII_ENV') || define('YII_ENV', 'dev');
 

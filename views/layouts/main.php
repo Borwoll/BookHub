@@ -38,15 +38,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 echo Nav::widget([
     'options' => ['class' => 'navbar-nav'],
     'items' => [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Книги', 'url' => ['/book/index']],
+        ['label' => 'Авторы', 'url' => ['/author/index']],
+        ['label' => 'Подписка', 'url' => ['/subscription/index']],
+        ['label' => 'ТОП авторов', 'url' => ['/report/index']],
         Yii::$app->user->isGuest
-            ? ['label' => 'Login', 'url' => ['/site/login']]
+            ? ['label' => 'Вход', 'url' => ['/site/login']]
             : '<li class="nav-item">'
                 . Html::beginForm(['/site/logout'])
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Выход (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'nav-link btn btn-link logout'],
                 )
                 . Html::endForm()
@@ -59,22 +60,18 @@ NavBar::end();
 
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
-        <?php if (! empty($this->params['breadcrumbs'])) { ?>
-            <?php echo Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]); ?>
+        <?php if (($this->params['breadcrumbs'] ?? []) !== []) { ?>
+            <?php echo Breadcrumbs::widget([
+                'links' => $this->params['breadcrumbs'],
+                'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+            ]); ?>
         <?php } ?>
         <?php echo Alert::widget(); ?>
         <?php echo $content; ?>
     </div>
 </main>
 
-<footer id="footer" class="mt-auto py-3 bg-light">
-    <div class="container">
-        <div class="row text-muted">
-            <div class="col-md-6 text-center text-md-start">&copy; My Company <?php echo date('Y'); ?></div>
-            <div class="col-md-6 text-center text-md-end"><?php echo Yii::powered(); ?></div>
-        </div>
-    </div>
-</footer>
+<!-- footer removed -->
 
 <?php $this->endBody(); ?>
 </body>

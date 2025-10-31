@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-// NOTE: Make sure this file is not accessible when deployed to production
 if (false === in_array(@$_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
     exit('You are not allowed to access this file.');
 }

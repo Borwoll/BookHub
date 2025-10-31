@@ -9,17 +9,18 @@ use yii\log\FileTarget;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$aliases = require __DIR__ . '/aliases.php';
 
 $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
-    'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm' => '@vendor/npm-asset',
-        '@tests' => '@app/tests',
-    ],
+    'aliases' => $aliases,
+    'on beforeAction' => function () {
+        $registerDi = require __DIR__ . '/di.php';
+        $registerDi();
+    },
     'components' => [
         'cache' => [
             'class' => FileCache::class,

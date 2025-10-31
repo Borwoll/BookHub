@@ -14,7 +14,7 @@ use yii\web\Controller;
 use yii\web\ErrorAction;
 use yii\web\Response;
 
-class SiteController extends Controller
+final class SiteController extends Controller
 {
     public function behaviors(): array
     {

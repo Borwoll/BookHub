@@ -12,6 +12,10 @@ $db = require __DIR__ . '/test_db.php';
 return [
     'id' => 'basic-tests',
     'basePath' => dirname(__DIR__),
+    'on beforeAction' => function () {
+        $registerDi = require __DIR__ . '/di.php';
+        $registerDi();
+    },
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
